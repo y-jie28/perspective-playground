@@ -24,7 +24,6 @@ const vm = Vue.createApp({
             document.execCommand("copy");
         }
     },
-
     computed: {
         transformBox() {
             return { transform: `perspective(${this.perspective}px) 
