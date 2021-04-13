@@ -23,7 +23,8 @@ body {
 }
 
 h2 {
-  color: #4f5351;
+  color: #9c2424;
+  text-shadow: 2px 1px #fff;
   text-align: center;
   font-size: 40px;
   margin: 20px;
@@ -52,7 +53,7 @@ section.settings {
 }
 .box-container {
   padding: 50px;
-  border: 1px solid #4f5351;
+  border: 1px solid #9c2424;
 }
 .box {
   width: 150px;
@@ -62,7 +63,7 @@ section.settings {
 }
 
 button {
-  background-color: #4f5351;
+  background-color: #9c2424;
   color: #fff;
   display: inline-block;
   font-size: 20px;
@@ -73,6 +74,10 @@ button {
 
   /* added by YJ */
   cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(120%);
 }
 
 label{
