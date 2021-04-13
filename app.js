@@ -14,14 +14,26 @@ const vm = Vue.createApp({
             this.rotateY = 0;
             this.rotateZ = 0;
         },
-        copyVal() {
-            let transformVal = `transform: 
-                                perspective: ${this.perspective}
-                                rotateX: ${this.rotateX}
-                                rotateY: ${this.rotateY}
-                                rotateZ: ${this.rotateZ}`
+        copyVal() {      
+            /* copy will intend to copy what's selected, but in this case the user has nothing to select;
+            The solution will be as following: 
+            We will create a textbox and prefill the textbox with the content and force the content to be copied  */
             
+            const el = document.createElement('textarea');
+            
+            // To prevent the browser or user to accidentally update the input before we have the opportunity to _select_ it
+            el.setAttribute('readonly', '');
+            
+            // This will effectively hide the element created
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';
+            
+            el.value = `transform: ${this.transformBox.transform}`;
+            document.body.appendChild(el);
+            el.select();
             document.execCommand("copy");
+            alert('Value successfully copied to clipboard! ');
+            el.remove(); // or document.body.removeChild(el);
         }
     },
     computed: {
