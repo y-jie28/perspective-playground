@@ -2,6 +2,8 @@
 
 Simple project to get familiar with Vue basics.
 
+[See Live Here :)](https://y-jie28.github.io/perspective-playground/)
+
 ## Directives Used
 - v-on (for click events on the buttons)
 - v-bind (for binding style on the box)
